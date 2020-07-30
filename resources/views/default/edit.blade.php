@@ -2,14 +2,7 @@
 @section('title', 'Tableau de bord')
 @section('content')
 
-<style type="text/css">
-	.all-icons .font-icon-detail {
-    
-    padding: 5px!important;
-    }
-</style>
-	
-      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+<nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
@@ -19,7 +12,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Mes vides</a>
+            <a class="navbar-brand" href="#pablo">Modifier votre profit</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -76,31 +69,55 @@
       </div>
       <div class="content">
         <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="title">Toutes mes vidéos</h5>
-                <!--p class="category">Handcrafted by our friends from <a href="https://nucleoapp.com/?ref=1712">NucleoApp</a></p-->
+          <div class="col-md-3"></div>
+
+          <div class="col-md-6" >
+            <div class="card card-user">
+              <div class="image">
+                <img src="../assets/img/bg5.jpg" alt="...">
               </div>
-              <!--Vidéo card-->
-              <div class="card-body all-icons">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="card">
-                      <img src="https://source.unsplash.com/random/1920x1080" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-sm btn-primary">Lire la vidéos</a>
+              <div class="card-body">
+                <div class="author">
+                  <a href="#">
+                    <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+                    <h5 class="title">@Username</h5>
+                  </a>
+                  <form>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" id="customFile" name="filename">
+                        <label class="custom-file-label" for="customFile">Télécharger une image</label>
                       </div>
                     </div>
                   </div>
-                </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" placeholder="Nom d'utilisateur" value="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="text" class="form-control" placeholder="E-mail" value="">
+                      </div>
+                    </div>
+                  </div>     
+                </form>  
+                </div>  
               </div>
-              <!--END Vidéo card-->
+              
             </div>
           </div>
+
+          <div class="col-md-3"></div>
         </div>
       </div>
-      
+
 @endsection

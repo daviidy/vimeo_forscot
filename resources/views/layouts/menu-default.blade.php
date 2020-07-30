@@ -43,10 +43,10 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          CT
-        </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <!--a href="http://www.creative-tim.com" class="simple-text logo-mini">
+
+        </a-->
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal" style="text-align: center;">
           <img src="https://forscot.oschoolelearning.com/images/schools/logos/1590163066.png" alt="Logo forscot" width="150">
         </a>
       </div>
@@ -64,7 +64,7 @@
               <p>Mes vidéos</p>
             </a>
           </li>
-          <li>
+          <!--li>
             <a href="./map.html">
               <i class="now-ui-icons location_map-big"></i>
               <p>Maps</p>
@@ -75,14 +75,14 @@
               <i class="now-ui-icons ui-1_bell-53"></i>
               <p>Notifications</p>
             </a>
-          </li>
+          </li-->
           <li>
-            <a href="./user.html">
+            <a href="default/edit">
               <i class="now-ui-icons users_single-02"></i>
-              <p>User Profile</p>
+              <p>Paramètre</p>
             </a>
           </li>
-          <li>
+          <!--li>
             <a href="./tables.html">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>Table List</p>
@@ -93,7 +93,7 @@
               <i class="now-ui-icons text_caps-small"></i>
               <p>Typography</p>
             </a>
-          </li>
+          </li-->
           <li class="active-pro">
             <a href="./upgrade.html">
               <!--i class="now-ui-icons arrows-1_cloud-download-93"></i-->
@@ -105,7 +105,11 @@
     </div>
     <div class="main-panel" id="main-panel">
       <!-- Navbar -->
+
+
 		@yield('content')
+
+
 
 		<footer class="footer">
 	        <div class=" container-fluid ">
