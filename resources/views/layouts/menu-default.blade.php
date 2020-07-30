@@ -34,6 +34,22 @@
   <link href="../asset/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../asset/demo/demo.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style type="text/css">
+  	body{
+  		font-family: 'Montserrat', sans-serif !important;
+  	}
+  	.sidebar[data-color="orange"]:after, .off-canvas-sidebar[data-color="orange"]:after {
+    background: #478ed9;
+	}
+	.sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]), .off-canvas-sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]) {
+    color: #478ed9;
+	}
+
+	.sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]) i, .off-canvas-sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]) i {
+    color: #478ed9;
+	}
+  </style>
 </head>
 
 <body class="">

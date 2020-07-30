@@ -16,6 +16,10 @@
 .card-user .image {
     height: 228px !important;
 }
+.btn-primary {
+    background-color: #478ed9!important;
+    color: #FFFFFF;
+}
 </style>
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
         <div class="container-fluid">
