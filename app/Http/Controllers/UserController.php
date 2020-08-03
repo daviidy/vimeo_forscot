@@ -10,6 +10,17 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
+    public function myVideos()
+    {
+        if (Auth::check() && !Auth::user()->isAdmin()) {
+            return view('default.myvideos');
+        }
+        else {
+            return redirect('home');
+        }
+
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -20,7 +31,7 @@ class UserController extends Controller
     {
         if (Auth::check() && Auth::user()->isAdmin()) {
             $users = User::orderby('id', 'asc')->paginate(30);
-            return view('users.admin.users.index', ['users' => $users]);
+            return view('admin.users.index', ['users' => $users]);
         }
         else {
             return redirect('home');
@@ -87,7 +98,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         if (Auth::check() && Auth::user()->isAdmin()) {
-                return view('users.admin.users.show', ['user' => $user,]);
+                return view('admin.users.show', ['user' => $user,]);
 
         }
         else {

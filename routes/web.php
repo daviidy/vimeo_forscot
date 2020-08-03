@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');
 });
 
 Route::resource('users', 'UserController');
@@ -27,6 +27,8 @@ Route::resource('comments', 'CommentController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/myVideos', 'UserController@myVideos');
 
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
