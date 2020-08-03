@@ -225,6 +225,46 @@
 	      </footer>
 	    </div>
 	  </div>
+
+
+      <!-- The Modal -->
+        <div class="modal fade" id="vimeoModal">
+          <div style="width: 100%" class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Choisissez la vidéo à mettre en ligne</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <form id="vimeoForm" class="" action="/postVideoToVimeo" method="post" enctype="multipart/form-data">
+                      @csrf
+                      <input type="file" name="videoVimeo" what="question text" id="videoVimeoInput"
+                        class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" style="">
+                        <input hidden type="text" name="videoVimeoSize" value="" id="videoVimeoSize">
+                       <input hidden type="text" name="user_id" value="{{Auth::user()->id}}">
+                      <button style="display: flex;justify-content: center; margin: 2rem auto;" type="submit" class="tch-btn-header-primary disable-animations fastclickable">Valider</button>
+
+                  </form>
+
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
 	  <!--   Core JS Files   -->
 	  <script src="/asset/js/core/jquery.min.js"></script>
 	  <script src="/asset/js/core/popper.min.js"></script>
@@ -246,6 +286,23 @@
 
 	    });
 	  </script>
+
+      <script type="text/javascript">
+
+      $('#vimeoTrigger').click(function() {
+          $('#vimeoModal').modal('toggle');
+      });
+
+
+      $('#videoVimeoInput').on('change', function() {
+                $('#videoVimeoSize').val(this.files[0].size + "bytes");
+            });
+
+        $('#vimeoForm').submit(function(){
+          $('#videoVimeoInput').remove();
+        });
+
+      </script>
 	</body>
 
 	</html>
