@@ -39,10 +39,10 @@
                 <div class="author">
                   <a href="#">
                     <img class="avatar border-gray" src="../asset/img/mike.jpg" alt="...">
-                    <h5 class="title">@username</h5>
+                    <h5 class="title">{{ucfirst(Auth::user()->name)}}</h5>
                   </a>
                   <p class="description">
-                    email block
+                    {{Auth::user()->email}}
                   </p>
                 </div>
                 <!--p class="description text-center">
@@ -83,7 +83,7 @@
                </div>
                <div class="card-body">
                 <div class="">
-                	<a href="#">
+                	<a href="{{route('users.edit', Auth::user()->id)}}">
 	                  	<button class="btn btn-primary btn-block">
 	                  		Modifier votre profit
 	              		</button>

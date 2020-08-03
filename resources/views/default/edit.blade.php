@@ -17,7 +17,7 @@
                 <div class="author">
                   <a href="#">
                     <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-                    <h5 class="title">@Username</h5>
+                    <h5 class="title">@<span>{{ucfirst(Auth::user()->name)}}</span></h5>
                   </a>
                   <form>
                   <div class="row">
@@ -33,7 +33,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Nom d'utilisateur" value="">
+                        <input type="text" class="form-control" placeholder="Nom d'utilisateur" value="{{Auth::user()->name}}">
                       </div>
                     </div>
                   </div>
@@ -42,8 +42,11 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>E-mail</label>
-                        <input type="text" class="form-control" placeholder="E-mail" value="">
+                        <input type="text" class="form-control" placeholder="E-mail" value="{{Auth::user()->email}}">
                       </div>
+                      <div class="col-md-4" style="margin: 0 auto;">
+                          <button class="btn btn-primary btn-block tex-center" style="background-color: #478ed9;">Modifier</button>
+                        </div>
                     </div>
                   </div>
                 </form>
