@@ -45,13 +45,8 @@
               <div class="card-body">
                 <div class="author">
                   <a href="#">
-<<<<<<< HEAD
-                    <img class="avatar border-gray" src="../asset/img/mike.jpg" alt="...">
-                    <h5 class="title">{{ucfirst(Auth::user()->name)}}</h5>
-=======
                     <img class="avatar border-gray" src="/storage/users/images/{{Auth::user()->image}}" alt="{{Auth::user()->name}}">
-                    <h5 class="title">@username</h5>
->>>>>>> 00c8ac620b6074f967aa2664f9a9ff92879ae1fc
+                    <h5 class="title">{{ucfirst(Auth::user()->name)}}</h5>
                   </a>
                   <p class="description">
                     {{Auth::user()->email}}
