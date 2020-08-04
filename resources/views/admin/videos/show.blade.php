@@ -127,7 +127,7 @@
                     }
                     a{-webkit-transition:.3s all ease;-o-transition:.3s all ease;transition:.3s all ease;color:#ee76ad;}
                     a:hover{text-decoration:none;color:#ee76ad;}
-                    h3{line-height:1.5;color:#000;font-weight:300;font-family:"Playfair Display", Georgia, serif;}
+                    h3{line-height:1.5;color:#000;font-weight:400;font-family: 'Montserrat', sans-serif;}
                     .bg-light{background:#fafafa!important;}
                     .btn{cursor:pointer;border-radius:30px;-webkit-box-shadow:none!important;box-shadow:none!important;}
                     .btn:hover,.btn:active,.btn:focus{outline:none;}

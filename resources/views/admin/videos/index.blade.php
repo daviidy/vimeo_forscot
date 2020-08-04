@@ -29,22 +29,24 @@
                             </ul>
                         </div>
                     </div>
-                     <!--Vidéo card-->
-                  <div class="card-body all-icons">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="card">
-                          <!--img src="../asset/img/bg5.jpg" class="card-img-top" alt="..."-->
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-sm btn-primary">Lire la vidéos</a>
+                     <!--Vidéo card container-->
+                          <div class="card-body all-icons">
+                            <div class="row">
+                                <!--Vidéo card -->
+                              <div class="col-md-4">
+                                <div class="card">
+                                  <!--img src="../asset/img/bg5.jpg" class="card-img-top" alt="..."-->
+                                  <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-sm btn-primary">Lire la vidéos</a>
+                                  </div>
+                                </div>                       
+                              </div>
+                              <!--END Vidéo card-->
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--END Vidéo card-->
+                          <!--END Vidéo card container-->
                 </div>
 
 
