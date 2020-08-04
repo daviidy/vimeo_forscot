@@ -1,7 +1,7 @@
 @extends('layouts.menu-admin')
-@section('title', 'Liste des utilisateurs')
-@section('page_title', 'Liste des utilisateurs')
-@section('link_title', 'Liste des utilisateurs')
+@section('title', 'Lecture de la vidéo')
+@section('page_title', 'Lecture de la vidéo')
+@section('link_title', 'Lecture de la vidéo')
 
 @section('content')
 
@@ -16,7 +16,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h5>Liste des utilisateurs</h5>
+                        <h5>Lecture de la vidéo</h5>
                         <span>use class <code>table</code> inside table element</span>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
