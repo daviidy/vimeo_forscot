@@ -305,6 +305,10 @@
           $('#vimeoModal').modal('toggle');
       });
 
+      $('#vimeoTrigger2').click(function() {
+          $('#vimeoModal').modal('toggle');
+      });
+
 
       $('#videoVimeoInput').on('change', function() {
                 $('#videoVimeoSize').val(this.files[0].size + "bytes");

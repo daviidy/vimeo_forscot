@@ -21,7 +21,13 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::check() && Auth::user()->isAdmin()) {
+            $videos = User::orderby('id', 'asc')->paginate(30);
+            return view('admin.videos.index', ['users' => $videos]);
+        }
+        else {
+            return redirect('home');
+        }
     }
 
     /**
@@ -242,7 +248,7 @@ class VideoController extends Controller
                   //Appel de fonction postData()
                   $resultat = postData($params, $url) ;
                   $json = json_decode($resultat, true);
-                  dd($resultat);
+                  dd($json);
                   $link = $json['upload']['upload_link'];
 
 

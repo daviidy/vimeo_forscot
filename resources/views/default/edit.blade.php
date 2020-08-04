@@ -11,15 +11,17 @@
           <div class="col-md-6" >
             <div class="card card-user">
               <div class="image">
-                <img src="../assets/img/bg5.jpg" alt="...">
+                <img src="https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="...">
               </div>
               <div class="card-body">
                 <div class="author">
                   <a href="#">
-                    <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+                    <img class="avatar border-gray" src="/storage/users/images/{{Auth::user()->image}}" alt="{{Auth::user()->name}}">
                     <h5 class="title">@<span>{{ucfirst(Auth::user()->name)}}</span></h5>
                   </a>
-                  <form>
+                  <form action="{{url('users', Auth::user())}}" method="post" enctype="multipart/form-data">
+                      @csrf
+                      {{method_field('patch')}}
                   <div class="row">
                     <div class="col-md-12">
                       <div class="custom-file mb-3">
