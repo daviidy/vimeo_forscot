@@ -67,7 +67,7 @@
                                 padding: 25px 15px;
                             }
                         }
-
+                        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
                       
                             /*! CSS Used from: https://colorlib.com/preview/theme/libro/css/style.css */
                     *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box;}
