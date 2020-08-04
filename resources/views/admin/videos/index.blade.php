@@ -16,7 +16,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h5>Liste des utilisateurs</h5>
+                        <h5>Liste des Vidéos</h5>
                         <span>use class <code>table</code> inside table element</span>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
@@ -29,56 +29,22 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="card-block table-border-style">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Titre de la vidéo</th>
-                                        <th>Description</th>
-                                        <th>Type</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($users as $user)
-                                    <tr>
-                                        <th scope="row">{{$loop->index + 1}}</th>
-                                        <td>{{$user->name}}</td>
-                                        <td>
-                                            {{$user->email}}
-                                        </td>
-                                        <td>{{$user->type}}</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <a class="float-right" href="/admin/users/{{$user->id}}">
-                                                        <i class="icon-pencil text-primary"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="col-6">
-                                                    <form action="{{ route('users.destroy', $user) }}" method="post">
-                                                        {{ csrf_field() }}
-                                                        {{ method_field('delete') }}
-                                                        <button
-                                                          id="test-id-unpublish-btn"
-                                                          class="btn rounded"><i class="icon-trash text-danger"></i></button>
-                                                    </form>
-                                                </div>
-
-                                            </div>
-
-
-
-                                        </td>
-                                        
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                     <!--Vidéo card-->
+                  <div class="card-body all-icons">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="card">
+                          <!--img src="../asset/img/bg5.jpg" class="card-img-top" alt="..."-->
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-sm btn-primary">Lire la vidéos</a>
+                          </div>
                         </div>
+                      </div>
                     </div>
+                  </div>
+                  <!--END Vidéo card-->
                 </div>
 
 

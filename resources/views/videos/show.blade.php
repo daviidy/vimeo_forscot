@@ -158,7 +158,8 @@ textarea.form-control{height:inherit!important;}
                     <div class="comment-form-wrap pt-5">
                     <h3 class="mb-5" _msthash="2308657" _msttexthash="231257">Laissez un commentaire</h3>
                     <form action="#" class="bg-light p-4">
-                    
+                    <input type="hidden" name="user_id" value="Auth::user()->id">
+                    <input type="hidden" name="video_id">
                     <div class="form-group">
                     <label for="message" _msthash="3718416" _msttexthash="92924">Message</label>
                     <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
