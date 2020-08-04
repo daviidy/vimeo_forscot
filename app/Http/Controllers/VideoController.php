@@ -6,6 +6,7 @@ use App\Video;
 use App\User;
 use App\Category;
 use App\Comment;
+use Auth;
 use Image;
 use Validator;
 use Illuminate\Support\Facades\Session;
@@ -23,7 +24,7 @@ class VideoController extends Controller
     {
         if (Auth::check() && Auth::user()->isAdmin()) {
             $videos = User::orderby('id', 'asc')->paginate(30);
-            return view('admin.videos.index', ['users' => $videos]);
+            return view('admin.videos.index', ['videos' => $videos]);
         }
         else {
             return redirect('home');

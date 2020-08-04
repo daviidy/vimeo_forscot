@@ -375,7 +375,7 @@
                                         <ul class="pcoded-submenu">
 
                                             <li class="">
-                                                <a href="{{url('users')}}" class="waves-effect waves-dark">
+                                                <a href="{{url('videos')}}" class="waves-effect waves-dark">
                                                     <span class="pcoded-mtext">Liste des Vidéos</span>
                                                 </a>
                                             </li>
