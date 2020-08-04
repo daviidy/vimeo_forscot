@@ -18,6 +18,8 @@
           }
         }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
         /*! CSS Used from: https://colorlib.com/preview/theme/libro/css/style.css */
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box;}
 h3{margin-top:0;margin-bottom:0.5rem;}
@@ -33,7 +35,7 @@ input{overflow:visible;}
 [type="submit"]{-webkit-appearance:button;}
 [type="submit"]::-moz-focus-inner{padding:0;border-style:none;}
 textarea{overflow:auto;resize:vertical;}
-h3{margin-bottom:0.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit;}
+h3{margin-bottom:0.5rem;font-family: 'Montserrat', sans-serif;font-weight:500;line-height:1.2;color:inherit;}
 h3{font-size:1.75rem;}
 .form-control{display:block;width:100%;padding:0.375rem 0.75rem;font-size:1rem;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:0.25rem;-webkit-transition:border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;transition:border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;-o-transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;}
 @media screen and (prefers-reduced-motion: reduce){
@@ -76,7 +78,7 @@ h3{page-break-after:avoid;}
 }
 a{-webkit-transition:.3s all ease;-o-transition:.3s all ease;transition:.3s all ease;color:#ee76ad;}
 a:hover{text-decoration:none;color:#ee76ad;}
-h3{line-height:1.5;color:#000;font-weight:300;font-family:"Playfair Display", Georgia, serif;}
+h3{line-height:1.5;color:#000;font-weight:400;font-family: 'Montserrat', sans-serif;}
 .bg-light{background:#fafafa!important;}
 .btn{cursor:pointer;border-radius:30px;-webkit-box-shadow:none!important;box-shadow:none!important;}
 .btn:hover,.btn:active,.btn:focus{outline:none;}
@@ -158,7 +160,8 @@ textarea.form-control{height:inherit!important;}
                     <div class="comment-form-wrap pt-5">
                     <h3 class="mb-5" _msthash="2308657" _msttexthash="231257">Laissez un commentaire</h3>
                     <form action="#" class="bg-light p-4">
-                    
+                    <input type="hidden" name="user_id" value="Auth::user()->id">
+                    <input type="hidden" name="video_id">
                     <div class="form-group">
                     <label for="message" _msthash="3718416" _msttexthash="92924">Message</label>
                     <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
