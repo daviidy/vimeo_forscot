@@ -40,16 +40,16 @@
            <div class="col-md-8">
             <div class="card card-user">
               <div class="image">
-                <img src="../asset/img/bg5.jpg" alt="...">
+                <img src="../asset/img/bg15.png" alt="...">
               </div>
               <div class="card-body">
                 <div class="author">
                   <a href="#">
                     <img class="avatar border-gray" src="/storage/users/images/{{Auth::user()->image}}" alt="{{Auth::user()->name}}">
-                    <h5 class="title">@username</h5>
+                    <h5 class="title">{{ucfirst(Auth::user()->name)}}</h5>
                   </a>
                   <p class="description">
-                    email block
+                    {{Auth::user()->email}}
                   </p>
                 </div>
                 <!--p class="description text-center">
@@ -99,9 +99,10 @@
                </div>
                <div class="card-body">
                 <div class="">
+
                 	<a href="{{route('users.edit', Auth::user())}}">
 	                  	<button class="btn btn-primary btn-block">
-	                  		Modifier votre profit
+	                  		Modifier votre profil
 	              		</button>
               		</a>
                 </div>

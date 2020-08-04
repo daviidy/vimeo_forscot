@@ -82,8 +82,8 @@
             <nav class="navbar header-navbar pcoded-header">
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
-                        <a href="/">
-                            <img class="img-fluid" width="150" src="/assets/imgs/logo-be.jpg" alt="Logo RepetBox" />
+                        <a href="https://forscot.oschoolelearning.com/">
+                            <img class="img-fluid" width="150" src="https://forscot.oschoolelearning.com/images/schools/logos/1590163066.png" alt="Logo Forscot" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="icon-menu icon-toggle-right"></i>
@@ -367,7 +367,21 @@
                                         </ul>
                                     </li>
 
+                                    <li class="pcoded-hasmenu">
+                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="icon-diamond"></i></span>
+                                            <span class="pcoded-mtext">Vidéos</span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
 
+                                            <li class="">
+                                                <a href="{{url('users')}}" class="waves-effect waves-dark">
+                                                    <span class="pcoded-mtext">Liste des Vidéos</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
 
                                     <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
