@@ -29,6 +29,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/myVideos', 'UserController@myVideos');
+Route::get('/defineAsAdmin/{user}', 'UserController@defineAsAdmin');
+Route::get('/revokeAdmin/{user}', 'UserController@revokeAdmin');
+
+//api vimeo
+Route::get('/vimeocallback', 'VideoController@vimeoCallback');
+Route::get('/uploadvideocallback', 'VideoController@uploadVideoCallback');
+Route::post('/postVideoToVimeo', 'VideoController@postVideoToVimeo');
 
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
