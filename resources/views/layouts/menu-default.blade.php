@@ -62,7 +62,7 @@
         <!--a href="http://www.creative-tim.com" class="simple-text logo-mini">
 
         </a-->
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal" style="text-align: center;">
+        <a href="https://forscot.oschoolelearning.com/" class="simple-text logo-normal" style="text-align: center;">
           <img src="https://forscot.oschoolelearning.com/images/schools/logos/1590163066.png" alt="Logo forscot" width="150">
         </a>
       </div>
@@ -72,6 +72,12 @@
             <a href="/home">
               <i class="now-ui-icons design_app"></i>
               <p>Tableau de bord</p>
+            </a>
+          </li>
+          <li>
+            <a id="vimeoTrigger">
+              <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+              <p>Ajouter une vidéo</p>
             </a>
           </li>
           <li>
@@ -111,7 +117,7 @@
             </a>
           </li-->
           <li class="active-pro">
-            <a href="./upgrade.html">
+            <a href="https://forscot.oschoolelearning.com/">
               <!--i class="now-ui-icons arrows-1_cloud-download-93"></i-->
               <p>Plateforme de formation</p>
             </a>
@@ -132,7 +138,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Mes videos</a>
+            <a class="navbar-brand" href="/myVideos">Mes vidéos</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -171,9 +177,15 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Paramètre</a>
-                  <a class="dropdown-item" href="#">Mes vidéos</a>
-                  <a class="dropdown-item" href="#">Déconnexion</a>
+                  <a class="dropdown-item" href="{{route('users.edit', Auth::user()->id)}}">Paramètre</a>
+                  <a class="dropdown-item" href="/myVideos">Mes vidéos</a>
+                  <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                           document.getElementById('logout-form').submit();">
+                                                           Déconnexion
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                  @csrf
+                                              </form>
+                                            </a>
                 </div>
               </li>
               <li class="nav-item">
@@ -196,7 +208,7 @@
 
 
 		<footer class="footer">
-	        <div class=" container-fluid ">
+	        <!--div class=" container-fluid ">
 	          <nav>
 	            <ul>
 	              <li>
@@ -221,7 +233,7 @@
 	              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
 	            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
 	          </div>
-	        </div>
+	        </div-->
 	      </footer>
 	    </div>
 	  </div>

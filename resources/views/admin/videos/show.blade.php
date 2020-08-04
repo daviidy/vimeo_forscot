@@ -1,8 +1,54 @@
-@extends('layouts.menu-default')
-@section('title', 'Tableau de bord')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vidéos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style type="text/css">
+  	body{
+  		background-color: #e5eaee;
+  		font-family: 'Montserrat', sans-serif;
 
-<style type="text/css">
+  	}
+  	.video-detail{
+  		background-color: #fff; 
+  		padding: 15px 55px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  	}
+
+  	.video-detail h3{
+  		padding: 35px 0; 
+  		text-transform: uppercase;
+  	}
+
+  	.video-container iframe{
+  		width: 100%; 
+  		height: 500px;
+  	}
+
+  	.video-description p{
+  		padding: 35px 0;
+  	}
+  	
+  	@media only screen and (max-width: 600px) {
+		.video-container iframe{
+	  		width: 100%; 
+	  		height: 100%;
+	  	}
+	  	.video-detail {
+		    background-color: #fff;
+		    padding: 15px 10px;
+	  	}
+	  	.video-description p{
+  			padding: 25px 15px;
+  		}
+	}
+
+  <style type="text/css">
         .map{
           height: 100%;
         }
@@ -113,72 +159,73 @@ textarea.form-control{height:inherit!important;}
 @font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
 @font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
 @font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-      </style>
-      <div class="panel-header panel-header-sm">
-      </div>
-      <div class="content">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header ">
-                VIDEO TITLE
+     
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-1"></div>
+    <div class="col-md-10 video-detail">
+    	<div>
+    		<h3>Vidéo title</h3>
+    	</div>
+    	<div class="video-container">
+    		<iframe class="responsive-iframe" width="560" height="315" src="https://www.youtube.com/embed/COhvzD7_kbU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    	</div>
+    	<div class="video-description">
+    		 <div>
+            <div class="about-author d-flex pt-5">
+              <div class="bio align-self-md-center mr-4">
+              <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
               </div>
-              <div class="card-body ">
-                <div id="" class="map">
-                  <iframe class="responsive-iframe" width="560" height="315" src="https://www.youtube.com/embed/COhvzD7_kbU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                  <div>
-                    <div class="about-author d-flex pt-5">
-                      <div class="bio align-self-md-center mr-4">
-                      <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
-                      </div>
-                      <div class="desc align-self-md-center">
-                      <h3 _msthash="2307175" _msttexthash="2148705">À propos de L’Auteur</h3>
-                      <p _msthash="2271464" _msttexthash="29386370">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessiatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similie, inventeur eos fugit cupiditate numquam!</p>
-                      </div>
-                    </div>
-
-                    <div class="pt-5 mt-5">
-                    <h3 class="mb-5" _msthash="1900028" _msttexthash="228072">6 Commentaires</h3>
-                    <ul class="comment-list">
-                    <li class="comment">
-                    <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                    </div>
-                    <div class="comment-body">
-                    <h3 _msthash="3046693" _msttexthash="86996">Jean Doe</h3>
-                    <div class="meta" _msthash="3209921" _msttexthash="236964">27 juin 2018 à 14h21</div>
-                    <p _msthash="3006484" _msttexthash="27210261">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessiatibus, ipsam impedit vitae autem, eum offica, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessiatibus, nihil?</p>
-                    <p><a href="#" class="reply" _msthash="3007446" _msttexthash="109967">Réponse</a></p>
-                    </div>
-                    </li>
-                    
-                    </ul>
-
-                    <div class="comment-form-wrap pt-5">
-                    <h3 class="mb-5" _msthash="2308657" _msttexthash="231257">Laissez un commentaire</h3>
-                    <form action="#" class="bg-light p-4">
-                    
-                    <div class="form-group">
-                    <label for="message" _msthash="3718416" _msttexthash="92924">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                    </div>
-                    <div class="form-group">
-                    <input type="submit" value="Poster le commentaire" class="btn py-3 px-4 btn-primary" _mstvalue="180726">
-                    </div>
-                    </form>
-                    </div>
-                    </div>
-
-                  </div>
-
-                  
-                </div>
+              <div class="desc align-self-md-center">
+              <h3 _msthash="2307175" _msttexthash="2148705">À propos de L’Auteur</h3>
+              <p _msthash="2271464" _msttexthash="29386370">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessiatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similie, inventeur eos fugit cupiditate numquam!</p>
               </div>
             </div>
+
+          <div class="pt-5 mt-5">
+          <h3 class="mb-5" _msthash="1900028" _msttexthash="228072">6 Commentaires</h3>
+          <ul class="comment-list">
+          <li class="comment">
+          <div class="vcard bio">
+          <img src="images/person_1.jpg" alt="Image placeholder">
           </div>
+          <div class="comment-body">
+          <h3 _msthash="3046693" _msttexthash="86996">Jean Doe</h3>
+          <div class="meta" _msthash="3209921" _msttexthash="236964">27 juin 2018 à 14h21</div>
+          <p _msthash="3006484" _msttexthash="27210261">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessiatibus, ipsam impedit vitae autem, eum offica, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessiatibus, nihil?</p>
+          <p><a href="#" class="reply" _msthash="3007446" _msttexthash="109967">Réponse</a></p>
+          </div>
+          </li>
+          
+          </ul>
+
+          <div class="comment-form-wrap pt-5">
+          <h3 class="mb-5" _msthash="2308657" _msttexthash="231257">Laissez un commentaire</h3>
+          <form action="#" class="bg-light p-4">
+          
+          <div class="form-group">
+          <label for="message" _msthash="3718416" _msttexthash="92924">Message</label>
+          <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+          <input type="submit" value="Poster le commentaire" class="btn py-3 px-4 btn-primary" _mstvalue="180726">
+          </div>
+          </form>
+          </div>
+          </div>
+
         </div>
 
-      </div>
+                  
+    	</div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
 
-      @endsection
+</body>
+</html>
