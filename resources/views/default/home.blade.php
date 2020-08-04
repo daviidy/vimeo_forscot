@@ -40,7 +40,7 @@
            <div class="col-md-8">
             <div class="card card-user">
               <div class="image">
-                <img src="../asset/img/bg5.jpg" alt="...">
+                <img src="../asset/img/bg15.png" alt="...">
               </div>
               <div class="card-body">
                 <div class="author">
@@ -101,7 +101,7 @@
                 <div class="">
                 	<a href="{{route('users.edit', Auth::user()->id)}}">
 	                  	<button class="btn btn-primary btn-block">
-	                  		Modifier votre profit
+	                  		Modifier votre profil
 	              		</button>
               		</a>
                 </div>

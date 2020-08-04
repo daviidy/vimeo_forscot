@@ -75,7 +75,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a id="vimeoTrigger">
               <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
               <p>Ajouter une vidéo</p>
             </a>
@@ -138,7 +138,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Mes videos</a>
+            <a class="navbar-brand" href="/myVideos">Mes vidéos</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
