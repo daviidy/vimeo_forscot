@@ -45,7 +45,7 @@
               <div class="card-body">
                 <div class="author">
                   <a href="#">
-                    <img class="avatar border-gray" src="../asset/img/mike.jpg" alt="...">
+                    <img class="avatar border-gray" src="/storage/users/images/{{Auth::user()->image}}" alt="{{Auth::user()->name}}">
                     <h5 class="title">@username</h5>
                   </a>
                   <p class="description">
@@ -99,7 +99,7 @@
                </div>
                <div class="card-body">
                 <div class="">
-                	<a href="#">
+                	<a href="{{route('users.edit', Auth::user())}}">
 	                  	<button class="btn btn-primary btn-block">
 	                  		Modifier votre profit
 	              		</button>
