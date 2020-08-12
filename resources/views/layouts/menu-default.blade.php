@@ -254,10 +254,18 @@
               <div class="modal-body">
                   <form id="vimeoForm" class="" action="/postVideoToVimeo" method="post" enctype="multipart/form-data">
                       @csrf
+                      <label for="">Nom de la vidéo</label>
+                      <input type="text" name="name" value="" placeholder="Nom de la vidéo">
                       <input type="file" name="videoVimeo" what="question text" id="videoVimeoInput"
                         class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" style="">
                         <input hidden type="text" name="videoVimeoSize" value="" id="videoVimeoSize">
                        <input hidden type="text" name="user_id" value="{{Auth::user()->id}}">
+                       <label for="">Choisissez une catégorie</label>
+                       <select class="" name="category_id">
+                           @foreach($categories as $category)
+                           <option value="{{$category->id}}"> {{$category->name}} </option>
+                           @endforeach
+                       </select>
                       <button style="display: flex;justify-content: center; margin: 2rem auto;" type="submit" class="tch-btn-header-primary disable-animations fastclickable">Valider</button>
 
                   </form>

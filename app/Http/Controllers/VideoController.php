@@ -59,7 +59,16 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
-        //
+        if (Auth::check()) {
+            if (Auth::user()->isAdmin()) {
+                // code...
+            }
+            $videos = User::orderby('id', 'asc')->paginate(30);
+            return view('admin.videos.index', ['users' => $videos]);
+        }
+        else {
+            return redirect('home');
+        }
     }
 
     /**
@@ -128,7 +137,7 @@ class VideoController extends Controller
                      CURLOPT_POSTFIELDS => $postfield,
                      CURLOPT_SSL_VERIFYPEER => false,
                      CURLOPT_HTTPHEADER => array(
-                     "Authorization: Basic ". base64_encode("348e328e2d3e36da3c8940ec81267f27e04f378c:+b7SiwEdQ4lNip4zhR0/aPF5TgMEFwgdQJ9BymvpLENV6cn8o+PlTbNvgG6HLN/YTNaoZyVlo6sJ7nxzM402MK6PANgNRG3pDDZ1EdlvsryXQ53Y/ShZdKxrSc4BxgHv"),
+                     "Authorization: Basic ". base64_encode("c8badb798a3c34802f424b247ba572ae60378494:5wP3Xc/2loDlqS6c/gsft3vecm3httLeeQzWRR9E3IxiSs6BtxiQQpNHqNhwRnT57C9A1qaDES+js3dJYnsKnKxYMmBstiMs+E5pMOzLDlEG79AtwDG9b6DjSc5xsh8e"),
 
                      ),
                      ));
@@ -200,7 +209,7 @@ class VideoController extends Controller
                     {
                      try {
                      $curl = curl_init();
-                     $postfield = http_build_query($params);
+                     $postfield = $params;
                      /*
                      $postfield = '';
                      foreach ($params as $index => $value) {
@@ -220,6 +229,8 @@ class VideoController extends Controller
                      CURLOPT_SSL_VERIFYPEER => false,
                      CURLOPT_HTTPHEADER => array(
                      "Authorization: Bearer ". Session::get('token'),
+                     "Content-Type: application/json",
+                     "Accept: application/vnd.vimeo.*+json;version=3.4",
                      ),
                      ));
                      $response = curl_exec($curl);
@@ -235,13 +246,13 @@ class VideoController extends Controller
                      throw new Exception($e);
                      }
                     }
-                        $params = array(
-                                            "upload" => array(
-                                            "approach" => "post",
-                                            "size" => str_replace("bytes", "", $request->videoVimeoSize),
-                                            "redirect_url" => "http://localhost:8000/uploadvideocallback"
-                                        )
-                                      );
+                        $data = array("upload" => array("approach" => "post",
+                                                        "size" => str_replace("bytes", "", $request->videoVimeoSize),
+                                                        "redirect_url" => "http://localhost:8000/uploadvideocallback",
+                                                    )
+                                                );
+                        $params = json_encode($data);
+                        //dd($params);
 
 
                   $url = "https://api.vimeo.com/me/videos";
@@ -251,7 +262,15 @@ class VideoController extends Controller
                   dd($json);
                   $link = $json['upload']['upload_link'];
 
-
+                  $video = Video::where('name', $request->name)->first();
+                  if ($video === null) {
+                      $video = Video::create([
+                          'name' => $request->name,
+                          'link' => $json['link'],
+                          'category_id' => $request->category_id,
+                          'user_id' => $request->user_id,
+                      ]);
+                  }
 
 
                    //Session::put('error', $json['reason']);
