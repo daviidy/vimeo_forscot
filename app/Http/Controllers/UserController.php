@@ -138,7 +138,7 @@ class UserController extends Controller
             if ($request->hasFile('image') ) {
                 $image = $request->file('image');
                 $filename = time() . '.' . $image->getClientOriginalExtension();
-                Image::make($image)->save(storage_path('app/public/images/users/images/'.$filename));
+                Image::make($image)->save(storage_path('app/public/users/images/'.$filename));
                 $user->image = $filename;
                 $user->save();
             }
