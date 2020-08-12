@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Video;
 use Auth;
 use Image;
 use Illuminate\Http\Request;
@@ -13,7 +14,8 @@ class UserController extends Controller
     public function myVideos()
     {
         if (Auth::check() && !Auth::user()->isAdmin()) {
-            return view('default.myvideos');
+            $videos = Video::where('user_id', Auth::user()->id)->get();
+            return view('default.myvideos', ['videos' => $videos]);
         }
         else {
             return redirect('home');

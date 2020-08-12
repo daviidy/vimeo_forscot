@@ -23,7 +23,7 @@ class VideoController extends Controller
     public function index()
     {
         if (Auth::check() && Auth::user()->isAdmin()) {
-            $videos = User::orderby('id', 'asc')->paginate(30);
+            $videos = Video::orderby('id', 'asc')->get();
             return view('admin.videos.index', ['videos' => $videos]);
         }
         else {
@@ -62,10 +62,12 @@ class VideoController extends Controller
     {
         if (Auth::check()) {
             if (Auth::user()->isAdmin()) {
-                // code...
+                return view('admin.videos.show', ['video' => $video]);
             }
-            $videos = User::orderby('id', 'asc')->paginate(30);
-            return view('admin.videos.index', ['users' => $videos]);
+            else {
+                return view('videos.show', ['video' => $video]);
+            }
+
         }
         else {
             return redirect('home');
@@ -192,6 +194,17 @@ class VideoController extends Controller
             Session::put('token', $user->token);
         }
 
+        $video = Video::where('name', $request->name)->first();
+        if ($video === null) {
+            $video = Video::create([
+                'name' => $request->name,
+                'category_id' => $request->category_id,
+                'user_id' => $request->user_id,
+            ]);
+        }
+
+
+
         /*
         $validation = Validator::make($request->all(), [
               'videoVimeo.*' => 'required|file|mimes:mp4|max:1000000'
@@ -249,7 +262,7 @@ class VideoController extends Controller
                     }
                         $data = array("upload" => array("approach" => "post",
                                                         "size" => str_replace("bytes", "", $request->videoVimeoSize),
-                                                        "redirect_url" => "http://localhost:8000/uploadvideocallback",
+                                                        "redirect_url" => "http://localhost:8000/uploadvideocallback?param=".$video->id,
                                                     )
                                                 );
                         $params = json_encode($data);
@@ -260,18 +273,23 @@ class VideoController extends Controller
                   //Appel de fonction postData()
                   $resultat = postData($params, $url) ;
                   $json = json_decode($resultat, true);
-                  dd($json);
+                  //dd($json);
                   $link = $json['upload']['upload_link'];
+                  Session::put('link', $json['link']);
+                  Session::put('uri', $json['uri']);
 
+                  /*
                   $video = Video::where('name', $request->name)->first();
                   if ($video === null) {
                       $video = Video::create([
                           'name' => $request->name,
                           'link' => $json['link'],
+                          'uri' => $json['uri'],
                           'category_id' => $request->category_id,
                           'user_id' => $request->user_id,
                       ]);
                   }
+                  */
 
 
                    //Session::put('error', $json['reason']);
@@ -284,7 +302,12 @@ class VideoController extends Controller
 
     public function uploadVideoCallback(Request $request)
     {
-        return redirect('home')->with('status', 'La vidéo a bien été mise en ligne');
+        $video_id = $request->input('param');
+        $video = Video::find($video_id);
+        $video->link = Session::get('link');
+        $video->uri = Session::get('uri');
+        $video->save();
+        return redirect('/myVideos')->with('status', 'La vidéo '.$video->name.' a bien été mise en ligne');
 
 
 

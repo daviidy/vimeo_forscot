@@ -10,7 +10,7 @@ class Video extends Model
      * [protected description]
      * @var [array]
      */
-    protected $fillable = ['name', 'link', 'category_id', 'user_id'];
+    protected $fillable = ['name', 'link', 'category_id', 'user_id', 'uri'];
 
 
 
@@ -34,4 +34,14 @@ class Video extends Model
          {
              return $this->belongsTo('App\User');
          }
+
+         /**
+          * [users description]
+          * relationship one to many with Comment model
+          * @return [array] [description]
+          */
+          public function comments()
+          {
+              return $this->hasMany('App\Comment');
+          }
 }
