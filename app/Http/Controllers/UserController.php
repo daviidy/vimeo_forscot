@@ -117,7 +117,13 @@ class UserController extends Controller
     public function edit(User $user)
     {
         if (Auth::check()) {
-            return view('default.edit', ['user' => $user,]);
+            if (Auth::user()->isAdmin()) {
+                return view('admin.edit', ['user' => $user]);
+            }
+            else {
+                return view('default.edit', ['user' => $user,]);
+            }
+
         }
         else {
             return redirect('home');
