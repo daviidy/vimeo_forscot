@@ -53,7 +53,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <a class="float-right" href="/admin/users/{{$user->id}}">
+                                                    <a class="float-right" href="/admin/users/{{$user->id}}" style="display: none;">
                                                         <i class="icon-pencil text-primary"></i>
                                                     </a>
                                                 </div>

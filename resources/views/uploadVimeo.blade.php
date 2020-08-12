@@ -152,7 +152,7 @@ input{outline:none;margin:0;border:none;-webkit-box-shadow:none;-moz-box-shadow:
 
                     </div>
 
-                    <div class="p-t-15">
+                    <div class="p-t-15 submitText">
                         <button class="btn btn--radius-2 btn--blue" type="submit">Valider</button>
                     </div>
                 </form>
@@ -160,3 +160,12 @@ input{outline:none;margin:0;border:none;-webkit-box-shadow:none;-moz-box-shadow:
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("form").submit(function(){
+        $(".btn--radius-2").hide();
+        $(".submitText").append(" <p>Chargement de la vidéo</p>.")
+      });
+    });
+</script>
