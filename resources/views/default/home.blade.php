@@ -81,7 +81,7 @@
               </div>
               <div class="card-body">
                 <div class="">
-                	<a target="_blank" href="https://api.vimeo.com/oauth/authorize?response_type=code&client_id=348e328e2d3e36da3c8940ec81267f27e04f378c&redirect_uri=http://localhost:8000/vimeocallback&scope=public%20edit%20upload&state={{Auth::user()->id}}">
+                	<a target="_blank" href="https://api.vimeo.com/oauth/authorize?response_type=code&client_id=c8badb798a3c34802f424b247ba572ae60378494&redirect_uri=http://localhost:8000/vimeocallback&scope=public%20edit%20upload&state={{Auth::user()->id}}">
 	                  	<button class="btn btn-success btn-block">
 	                  		Autoriser Viméo
 	              		</button>
@@ -90,7 +90,7 @@
                </div>
               <div class="card-body">
                 <div class="">
-                	<a id="vimeoTrigger">
+                	<a id="vimeoTrigger2">
 	                  	<button class="btn btn-primary btn-block">
 	                  		Ajouter une nouvelle vidéo
 	              		</button>

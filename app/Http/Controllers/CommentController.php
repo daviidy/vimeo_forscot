@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use Auth;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -35,7 +36,13 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Auth::check()) {
+            $comment = Comment::create($request->all());
+            return redirect()->back()->with('status', 'Votre commentaire a bien été ajouté');
+        }
+        else {
+            return redirect('home');
+        }
     }
 
     /**

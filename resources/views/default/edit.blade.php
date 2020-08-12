@@ -25,7 +25,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input" id="customFile" name="filename">
+                        <input type="file" class="custom-file-input" id="customFile" name="image">
                         <label class="custom-file-label" for="customFile">Télécharger une image</label>
                       </div>
                     </div>
@@ -44,7 +44,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>E-mail</label>
-                        <input type="text" class="form-control" placeholder="E-mail" value="{{Auth::user()->email}}">
+                        <input readonly type="text" class="form-control" placeholder="E-mail" value="{{Auth::user()->email}}">
                       </div>
                       <div class="col-md-4" style="margin: 0 auto;">
                           <button class="btn btn-primary btn-block tex-center" style="background-color: #478ed9;">Modifier</button>

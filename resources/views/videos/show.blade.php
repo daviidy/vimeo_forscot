@@ -13,7 +13,7 @@
 
         @media only screen and (max-width: 600px) {
         .card-body .map iframe{
-            width: 100%; 
+            width: 100%;
             height: 100%;
           }
         }
@@ -123,59 +123,64 @@ textarea.form-control{height:inherit!important;}
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
-                VIDEO TITLE
+                {{$video->name}}
               </div>
               <div class="card-body ">
                 <div id="" class="map">
-                  <iframe class="responsive-iframe" width="560" height="315" src="https://www.youtube.com/embed/COhvzD7_kbU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe src="https://player.vimeo.com{{str_replace('s', '', $video->uri)}}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
                   <div>
                     <div class="about-author d-flex pt-5">
                       <div class="bio align-self-md-center mr-4">
-                      <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+                      <img src="/storage/users/images/{{$video->user->image}}" alt="{{$video->user->name}}" class="img-fluid mb-4">
                       </div>
                       <div class="desc align-self-md-center">
-                      <h3 _msthash="2307175" _msttexthash="2148705">À propos de L’Auteur</h3>
-                      <p _msthash="2271464" _msttexthash="29386370">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessiatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similie, inventeur eos fugit cupiditate numquam!</p>
+                      <h3 _msthash="2307175" _msttexthash="2148705">Formateur: {{$video->user->name}}</h3>
+                      <p _msthash="2271464" _msttexthash="29386370">{{$video->user->email}}</p>
                       </div>
                     </div>
 
                     <div class="pt-5 mt-5">
-                    <h3 class="mb-5" _msthash="1900028" _msttexthash="228072">6 Commentaires</h3>
+                    <h3 class="mb-5" _msthash="1900028" _msttexthash="228072">{{count($video->comments)}} Commentaires</h3>
                     <ul class="comment-list">
-                    <li class="comment">
-                    <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                    </div>
-                    <div class="comment-body">
-                    <h3 _msthash="3046693" _msttexthash="86996">Jean Doe</h3>
-                    <div class="meta" _msthash="3209921" _msttexthash="236964">27 juin 2018 à 14h21</div>
-                    <p _msthash="3006484" _msttexthash="27210261">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessiatibus, ipsam impedit vitae autem, eum offica, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessiatibus, nihil?</p>
-                    <p><a href="#" class="reply" _msthash="3007446" _msttexthash="109967">Réponse</a></p>
-                    </div>
-                    </li>
-                    
+                        @foreach($video->comments as $comment)
+                        <li class="comment">
+                            <div class="vcard bio">
+                                <img src="/storage/users/images/{{$comment->user->image}}" alt="{{$comment->user->name}}">
+                            </div>
+                        <div class="comment-body">
+                            <h3 _msthash="3046693" _msttexthash="86996">{{$comment->user->name}}</h3>
+                            <div class="meta" _msthash="3209921" _msttexthash="236964">{{ Carbon\Carbon::parse($comment->created_at)->format('d-m-Y') }}</div>
+                            <p _msthash="3006484" _msttexthash="27210261">{{$comment->text}}</p>
+                            <!--
+                            <p><a href="#" class="reply" _msthash="3007446" _msttexthash="109967">Réponse</a></p>
+                        -->
+                        </div>
+                        </li>
+                        @endforeach
+
                     </ul>
 
                     <div class="comment-form-wrap pt-5">
-                    <h3 class="mb-5" _msthash="2308657" _msttexthash="231257">Laissez un commentaire</h3>
-                    <form action="#" class="bg-light p-4">
-                    <input type="hidden" name="user_id" value="Auth::user()->id">
-                    <input type="hidden" name="video_id">
-                    <div class="form-group">
-                    <label for="message" _msthash="3718416" _msttexthash="92924">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                    </div>
-                    <div class="form-group">
-                    <input type="submit" value="Poster le commentaire" class="btn py-3 px-4 btn-primary" _mstvalue="180726">
-                    </div>
-                    </form>
+                        <h3 class="mb-5" _msthash="2308657" _msttexthash="231257">Laissez un commentaire</h3>
+                        <form method="post" enctype="multipart/form-data" action="{{route('comments.store')}}" class="bg-light p-4">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                            <input type="hidden" name="video_id" value="{{$video->id}}">
+                            <div class="form-group">
+                            <label for="message" _msthash="3718416" _msttexthash="92924">Message</label>
+                            <textarea name="text" id="message" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                            <input type="submit" value="Poster le commentaire" class="btn py-3 px-4 btn-primary" _mstvalue="180726">
+                            </div>
+                        </form>
                     </div>
                     </div>
 
                   </div>
 
-                  
+
                 </div>
               </div>
             </div>

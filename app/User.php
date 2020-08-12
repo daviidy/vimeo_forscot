@@ -46,6 +46,27 @@ class User extends Authenticatable
     }
 
 
+    /**
+     * [users description]
+     * relationship one to many with Video model
+     * @return [array] [description]
+     */
+     public function videos()
+     {
+         return $this->hasMany('App\Video');
+     }
+
+     /**
+      * [users description]
+      * relationship one to many with Comment model
+      * @return [array] [description]
+      */
+      public function comments()
+      {
+          return $this->hasMany('App\Comment');
+      }
+
+
 
 
 }

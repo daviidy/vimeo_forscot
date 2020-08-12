@@ -94,6 +94,7 @@
                     </div>
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
+                            <!--
                             <li class="header-search">
                                 <div class="main-search morphsearch-search">
                                     <div class="input-group">
@@ -107,6 +108,7 @@
                                     </div>
                                 </div>
                             </li>
+                        -->
                             <li>
                                 <a href="#!" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()" class="waves-effect waves-light" data-cf-modified-4ae1809b5ff4f05c7560522f-="">
                                     <i class="full-screen feather icon-maximize"></i>
@@ -114,6 +116,7 @@
                             </li>
                         </ul>
                         <ul class="nav-right">
+                            <!--
                             <li class="header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
@@ -166,10 +169,11 @@
                                     </div>
                                 </div>
                             </li>
+                        -->
                             <li class="user-profile header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="/storage/images/users/{{Auth::user()->image}}" class="img-radius" alt="User-Profile-Image">
+                                        <img src="/storage/users/images/{{Auth::user()->image}}" class="img-radius" alt="{{Auth::user()->name}}">
                                         <span>{{Auth::user()->name}}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
