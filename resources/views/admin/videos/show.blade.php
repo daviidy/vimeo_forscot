@@ -5,8 +5,6 @@
 
 @section('content')
 
-
-
 <div class="pcoded-inner-content">
 
     <div class="main-body">
@@ -40,19 +38,19 @@
                             padding: 15px 55px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                         }
                     */
-                        .video-detail h3{
+                        /*.video-detail h3{
                             padding: 35px 0;
                             text-transform: uppercase;
-                        }
+                        }*/
 
                         .video-container iframe{
                             width: 100%;
                             height: 500px;
                         }
 
-                        .video-description p{
+                        /*.video-description p{
                             padding: 35px 0;
-                        }
+                        }*/
 
                         @media only screen and (max-width: 600px) {
                             .video-container iframe{

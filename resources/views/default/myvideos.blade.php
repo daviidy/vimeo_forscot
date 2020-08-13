@@ -8,7 +8,11 @@
     padding: 5px!important;
     }
 </style>
-
+			@if(session('status'))
+			<div style="margin: 3rem;" class="alert alert-success">
+					{{session('status')}}
+			</div>
+			@endif
 
       <div class="panel-header panel-header-sm">
       </div>
