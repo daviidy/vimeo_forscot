@@ -81,7 +81,7 @@
               </div>
               <div class="card-body">
                 <div class="">
-                	<a target="_blank" href="https://api.vimeo.com/oauth/authorize?response_type=code&client_id=c8badb798a3c34802f424b247ba572ae60378494&redirect_uri=http://localhost:8000/vimeocallback&scope=public%20edit%20upload&state={{Auth::user()->id}}">
+                	<a target="_blank" href="https://api.vimeo.com/oauth/authorize?response_type=code&client_id=c8badb798a3c34802f424b247ba572ae60378494&redirect_uri=https://vimeo.rikudo.ci/vimeocallback&scope=public%20edit%20upload&state={{Auth::user()->id}}">
 	                  	<button class="btn btn-success btn-block">
 	                  		Autoriser Viméo
 	              		</button>

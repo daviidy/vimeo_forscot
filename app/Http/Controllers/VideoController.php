@@ -160,7 +160,7 @@ class VideoController extends Controller
 
                         $params = array('grant_type' => 'authorization_code',
                                         'code' => $code,
-                                        'redirect_uri' => "http://localhost:8000/vimeocallback",
+                                        'redirect_uri' => "https://vimeo.rikudo.ci/vimeocallback",
                                         );
 
                   $url = "https://api.vimeo.com/oauth/access_token";
@@ -262,7 +262,7 @@ class VideoController extends Controller
                     }
                         $data = array("upload" => array("approach" => "post",
                                                         "size" => str_replace("bytes", "", $request->videoVimeoSize),
-                                                        "redirect_url" => "http://localhost:8000/uploadvideocallback?param=".$video->id,
+                                                        "redirect_url" => "https://vimeo.rikudo.ci/uploadvideocallback?param=".$video->id,
                                                     )
                                                 );
                         $params = json_encode($data);
